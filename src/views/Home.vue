@@ -1,16 +1,19 @@
 <template>
   <div class="home">
-    <Container></Container>
+    <ContainerA></ContainerA>
+    <ContainerB></ContainerB>
   </div>
 </template>
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
-  import Container from '@/components/Container.vue';
+  import ContainerA from '@/components/ContainerA.vue';
+  import ContainerB from '@/components/ContainerB.vue';
 
   @Component({
     components: {
-      Container,
+      ContainerA,
+      ContainerB,
     },
   })
   export default class Home extends Vue {}
