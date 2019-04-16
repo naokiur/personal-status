@@ -3,25 +3,32 @@
     <b-container>
       <b-row>
         <b-col>
-          <ContainerA></ContainerA>
+          <Avatar></Avatar>
         </b-col>
         <b-col>
-          <ContainerB></ContainerB>
+          <Status></Status>
         </b-col>
       </b-row>
     </b-container>
   </div>
 </template>
 
+<style scoped>
+  .home {
+    margin: 1%
+  }
+</style>
+
+
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
-  import ContainerA from '@/components/ContainerA.vue';
-  import ContainerB from '@/components/ContainerB.vue';
+  import Avatar from '@/components/Avatar.vue';
+  import Status from '@/components/Status.vue';
 
   @Component({
     components: {
-      ContainerA,
-      ContainerB,
+      Avatar,
+      Status,
     },
   })
   export default class Home extends Vue {}
