@@ -1,7 +1,15 @@
 <template>
   <div class="home">
-    <ContainerA></ContainerA>
-    <ContainerB></ContainerB>
+    <b-container>
+      <b-row>
+        <b-col>
+          <ContainerA></ContainerA>
+        </b-col>
+        <b-col>
+          <ContainerB></ContainerB>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 

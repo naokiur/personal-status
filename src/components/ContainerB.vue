@@ -1,9 +1,5 @@
 <template>
-    <b-container>
-        <b-row>
-            <b-col><span @click="updateMessage()">{{storeMessage}}</span></b-col>
-        </b-row>
-    </b-container>
+  <span @click="updateMessage()">{{storeMessage}}</span>
 </template>
 
 <script lang="ts">

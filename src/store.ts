@@ -9,7 +9,7 @@ export default new Vuex.Store({
   },
   mutations: {
     updateMessage(state, val) {
-      state.message = val
+      state.message = val;
     },
   },
   actions: {

@@ -1,9 +1,5 @@
 <template>
-    <b-container>
-        <b-row>
-            <b-col><span>{{storeMessage}}</span></b-col>
-        </b-row>
-    </b-container>
+  <span>{{storeMessage}}</span>
 </template>
 
 <script lang="ts">
