@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div v-for="item in storeStatus" :key="item.id">
+    <!-- <div v-for="item in storeStatus" :key="item.id">
       <div v-for="midiumItem in item.contents" :key="midiumItem.id">
         <div>
           {{ midiumItem.name }}
@@ -11,10 +11,8 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- <b-container>
-    <b-row v-for="item in storeStatus" :key="item.id">
+    </div> -->
+    <!-- <b-container v-for="item in storeStatus" :key="item.id">
       <b-row v-for="midiumItem in item.contents" :key="midiumItem.id">
         <b-row v-for="minorItem in midiumItem.contents" :key="minorItem.id">
           <b-row>
@@ -22,15 +20,22 @@
           </b-row>
         </b-row>
       </b-row>
-    </b-row>
-  </b-container> -->
+    </b-container> -->
+    <Chart></Chart>
+  </section>
 </template>
 
 <script lang="ts">
   import { Component, Vue} from 'vue-property-decorator';
+  import Chart from '@/components/Chart.vue';
 
-  @Component
+  @Component({
+    components: {
+      Chart,
+      },
+  })
   export default class Status extends Vue {
+
       get storeMessage(): string {
         return this.$store.state.message;
       }
