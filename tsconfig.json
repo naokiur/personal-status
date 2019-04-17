@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "module": "esnext",
-    "strict": true,
+    "strict": false, // https://github.com/vuejs/vue-class-component/issues/181#issuecomment-445437321
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
