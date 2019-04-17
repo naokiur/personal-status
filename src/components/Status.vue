@@ -1,5 +1,11 @@
 <template>
   <section>
+    <b-tabs>
+      <b-tab title="aaa">aaa</b-tab>
+      <b-tab title="bbb">bbb</b-tab>
+      <b-tab title="ccc">ccc</b-tab>
+      <b-tab title="ddd">ddd</b-tab>
+    </b-tabs>
     <!-- <div v-for="item in storeStatus" :key="item.id">
       <div v-for="midiumItem in item.contents" :key="midiumItem.id">
         <div>
