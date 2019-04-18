@@ -3,7 +3,7 @@ import { HorizontalBar } from 'vue-chartjs';
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
-    extends: HorizontalBar, // this is important to add the functionality to your component
+    extends: HorizontalBar,
 })
 export default class Chart extends Vue<HorizontalBar> {
   mounted (): void {
