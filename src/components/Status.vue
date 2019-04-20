@@ -1,7 +1,9 @@
 <template>
   <section>
     <b-tabs>
-      <b-tab  v-for="tabInfo in tabInfoList" :key="tabInfo" :title="tabInfo">{{tabInfo}}</b-tab>
+      <b-tab  v-for="statusMinor in status" :key="statusMinor.id" :title="statusMinor.name">
+        <Chart :label="statusMinor.contents.map(content => content.id)" :data="statusMinor.contents.map(content => content.level)"></Chart>
+      </b-tab>
     </b-tabs>
     <!-- <div v-for="item in storeStatus" :key="item.id">
       <div v-for="midiumItem in item.contents" :key="midiumItem.id">
@@ -24,7 +26,7 @@
         </b-row>
       </b-row>
     </b-container> -->
-    <Chart></Chart>
+    <!-- <Chart></Chart> -->
   </section>
 </template>
 
@@ -39,6 +41,8 @@
   })
   export default class Status extends Vue {
       public tabInfoList = ['aaa', 'bbb', 'ccc'];
+
+      public status = this.$store.state.status;
 
       get storeMessage(): string {
         return this.$store.state.message;

@@ -18,21 +18,23 @@ export default new Vuex.Store({
     //     },
     //   },
     // ],
+    // status: [
+    //   1,
+    //   2,
+    //   3,
+    //   4,
+    //   5,
+    // ],
     status: [
       {
-        id: 'majorItem',
+        id: 'minorItem',
+        name: '野手',
         contents: [
-          {
-            id: 'minorItem',
-            name: '野手',
-            contents: [
-              {id: 'meat', content: 'A'},
-              {id: 'power', content: 'B'},
-              {id: 'run', content: 'C'},
-              {id: 'shoulder', content: 'D'},
-              {id: 'diffence', content: 'E'},
-            ],
-          },
+          {id: 'meat', level: 5},
+          {id: 'power', level: 4},
+          {id: 'run', level: 3},
+          {id: 'shoulder', level: 2},
+          {id: 'diffence', level: 1},
         ],
       },
     ],
