@@ -15,11 +15,22 @@ export default class Chart extends Vue<HorizontalBar> {
       labels: this.label,
       datasets: [
         {
-          label: 'GitHub Commits',
+          label: 'ステータス',
           backgroundColor: '#f87979',
           data: this.data,
         },
       ],
+    },
+    {
+      scales: {
+        xAxes: [{
+          ticks: {
+            min: 0,
+            max: 5,
+            stepSize: 1,
+          },
+        }],
+      },
     });
   }
 }

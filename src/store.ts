@@ -27,7 +27,7 @@ export default new Vuex.Store({
     // ],
     status: [
       {
-        id: 'minorItem',
+        id: 'fielder',
         name: '野手',
         contents: [
           {id: 'meat', level: 5},
@@ -35,6 +35,17 @@ export default new Vuex.Store({
           {id: 'run', level: 3},
           {id: 'shoulder', level: 2},
           {id: 'diffence', level: 1},
+        ],
+      },
+      {
+        id: 'pitcher',
+        name: '投手',
+        contents: [
+          {id: 'speed', level: 5},
+          {id: 'controll', level: 2},
+          {id: 'stamina', level: 4},
+          {id: 'change', level: 5},
+          {id: 'diffence', level: 2},
         ],
       },
     ],
