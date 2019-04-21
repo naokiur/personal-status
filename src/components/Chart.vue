@@ -24,6 +24,10 @@ export default class Chart extends Vue<HorizontalBar> {
     {
       scales: {
         xAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: 'レベル',
+          },
           ticks: {
             min: 0,
             max: 5,
