@@ -1,10 +1,12 @@
 <template>
   <section>
-    <b-tabs>
-      <b-tab  v-for="statusMinor in status" :key="statusMinor.id" :title="statusMinor.name">
-        <Chart :label="statusMinor.contents.map(content => content.id)" :data="statusMinor.contents.map(content => content.level)"></Chart>
-      </b-tab>
-    </b-tabs>
+    <b-card no-body>
+      <b-tabs card>
+        <b-tab  v-for="statusMinor in status" :key="statusMinor.id" :title="statusMinor.name">
+          <Chart :label="statusMinor.contents.map(content => content.id)" :data="statusMinor.contents.map(content => content.level)"></Chart>
+        </b-tab>
+      </b-tabs>
+    </b-card>
     <!-- <div v-for="item in storeStatus" :key="item.id">
       <div v-for="midiumItem in item.contents" :key="midiumItem.id">
         <div>

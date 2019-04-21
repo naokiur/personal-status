@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <b-container>
-      <b-row>
+      <b-row align-v="center">
         <b-col>
           <Avatar></Avatar>
         </b-col>
@@ -15,7 +15,7 @@
 
 <style scoped>
   .home {
-    margin: 1%
+    margin: 1%;
   }
 </style>
 
