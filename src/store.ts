@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    message: 'StoreMessage',
+    message: 'FamilyName FirstName',
     // status: [
     //   {
     //     firstA: {
@@ -30,7 +30,7 @@ export default new Vuex.Store({
         id: 'fielder',
         name: '野手',
         contents: [
-          {id: 'meat', level: 5},
+          {id: 'meet', level: 5},
           {id: 'power', level: 4},
           {id: 'run', level: 3},
           {id: 'shoulder', level: 2},
