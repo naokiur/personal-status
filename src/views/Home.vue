@@ -1,15 +1,24 @@
 <template>
   <div class="home">
-    <b-container>
-      <b-row align-v="center">
-        <b-col>
-          <Avatar></Avatar>
-        </b-col>
-        <b-col>
-          <Status></Status>
-        </b-col>
-      </b-row>
-    </b-container>
+    <b-card no-body>
+        <b-tabs card>
+          <b-tab title="ステータス">
+            <b-container>
+              <b-row align-v="center">
+                <b-col>
+                  <Avatar></Avatar>
+                </b-col>
+                <b-col>
+                  <Status></Status>
+                </b-col>
+              </b-row>
+            </b-container>
+          </b-tab>
+          <b-tab title="入力">
+            入力
+          </b-tab>
+        </b-tabs>
+    </b-card>
   </div>
 </template>
 
