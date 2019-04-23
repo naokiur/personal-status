@@ -3,16 +3,7 @@
     <b-card no-body>
         <b-tabs card>
           <b-tab title="ステータス">
-            <b-container>
-              <b-row align-v="center">
-                <b-col>
-                  <Avatar></Avatar>
-                </b-col>
-                <b-col>
-                  <Status></Status>
-                </b-col>
-              </b-row>
-            </b-container>
+            <Info></Info>
           </b-tab>
           <b-tab title="入力">
             入力
@@ -31,13 +22,11 @@
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
-  import Avatar from '@/components/Avatar.vue';
-  import Status from '@/components/Status.vue';
+  import Info from '@/components/Info.vue';
 
   @Component({
     components: {
-      Avatar,
-      Status,
+      Info,
     },
   })
   export default class Home extends Vue {}
