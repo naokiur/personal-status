@@ -6,7 +6,7 @@
             <Info></Info>
           </b-tab>
           <b-tab title="入力">
-            <!-- <StatusInput></StatusInput> -->
+            <StatusInput></StatusInput>
           </b-tab>
         </b-tabs>
     </b-card>
@@ -27,8 +27,8 @@
 
   @Component({
     components: {
-      // StatusInput,
       Info,
+      StatusInput,
     },
   })
   export default class Home extends Vue {}

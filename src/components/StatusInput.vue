@@ -1,6 +1,6 @@
 <template>
   <div>
-
+      入力画面
 
   </div>
 </template>

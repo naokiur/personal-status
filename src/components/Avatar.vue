@@ -2,7 +2,6 @@
   <b-container>
     <b-row align-h="center" align-v="center">
       <b-card
-          :title="storeMessage"
           img-src="https://picsum.photos/600/600/?random"
           img-alt="Image"
           img-top
