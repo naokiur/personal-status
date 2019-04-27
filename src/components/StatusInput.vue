@@ -2,26 +2,33 @@
   <b-container>
     <b-row>
       <b-col>
-        <b-form-textarea
-          v-model="major"
-          rows=6
-          max-rows="6"
-          placeholder="input 区分"
+        <b-form-group
+          id="group-categoryInput"
+          label="区分"
+          label-for="categoryInput"
         >
-        </b-form-textarea>
+          <b-form-textarea
+            id="categoryInput"
+            v-model="categoryInput"
+            rows=6
+            max-rows="6"
+            placeholder="input category"
+          >
+          </b-form-textarea>
+        </b-form-group>
       </b-col>
       <b-col>
-        <b-row v-for="majorData in dataList" :key="majorData">
+        <b-row v-for="category in generateCategories" :key="category">
           <b-form-group
-            :id="`group-${majorData}`"
-            :label="majorData"
-            :label-for="majorData"
+            :id="`group-${category}`"
+            :label="category"
+            :label-for="category"
           >
             <b-form-textarea
-              :id="majorData"
+              :id="category"
               rows="3"
               max-rows="3"
-              :placeholder="`input ${majorData}`"
+              :placeholder="`input ${category}`"
             >
             </b-form-textarea>
           </b-form-group>
@@ -35,8 +42,13 @@
 export default {
   data() {
     return {
-      major: '',
-      dataList: ['a', 'b']
+      categoryInput: ''
+    }
+  },
+  computed: {
+    generateCategories() {
+      const cateList = this.categoryInput.split('\n')
+      return cateList.filter(v => v != '')
     }
   }
 }
