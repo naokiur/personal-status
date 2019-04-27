@@ -18,7 +18,7 @@
         </b-form-group>
       </b-col>
       <b-col>
-        <b-row v-for="category in generateCategories" :key="category">
+        <b-row v-for="category in generateCategories" :key="category.id">
           <b-form-group
             :id="`group-${category.id}`"
             :label="category.id"
@@ -30,20 +30,23 @@
               rows="3"
               max-rows="3"
               :placeholder="`input ${category.id}`"
+              @change="generateSmallCategory(category.id)"
             >
             </b-form-textarea>
           </b-form-group>
         </b-row>
       </b-col>
     </b-row>
-    <b-row v-for="category in this.cateList" :key="category">
+    <b-row v-for="category in cateList" :key="category.id">
       <b-row>
         <b-col>
           {{ category.id }}
         </b-col>
         <b-col>
-          {{ category.smallCategoryInput }}
         </b-col>
+        <b-row v-for="smallCate in category.smallCateList" :key="smallCate.id">
+          {{ `${smallCate.id} : ${smallCate.level}`  }}
+        </b-row>
       </b-row>
     </b-row>
   </b-container>
@@ -51,11 +54,13 @@
 
 <script>
 export default {
-
   data() {
     return {
       categoryInput: '',
-      cateList: []
+      cateList: [],
+      // smallCateList: [
+      //   {id: '', level: ''}
+      // ]
     }
   },
   computed: {
@@ -77,8 +82,18 @@ export default {
         }
       })
 
-      
       return this.cateList
+    },
+  },
+  methods: {
+    generateSmallCategory(id) {
+      const smallInput = this.cateList.filter(v => v.id = id)[0].smallCategoryInput
+      this.cateList.filter(v => v.id = id)[0].smallCateList = smallInput.split(`\n`).filter(v => v != '').map(v => {
+        return {
+          id: v,
+          level: 0
+        }
+      })
     }
   }
 }
