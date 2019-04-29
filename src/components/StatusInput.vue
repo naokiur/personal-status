@@ -59,16 +59,13 @@
       </b-col>
     </b-row>
     <b-row v-for="category in categoryList" :key="category.id">
-      <b-row>
-        <b-col>
-          {{ category.id }}
-        </b-col>
-        <b-col>
-        </b-col>
+      <b-col>
         <b-row v-for="smallCategory in category.smallCategoryList" :key="smallCategory.id">
-          <p>{{ `${smallCategory.id} : ${smallCategory.level}`  }}</p>
+          <b-form-group>
+            <p>{{ `${category.name} : ${smallCategory.name} : ${smallCategory.level}`  }}</p>
+          </b-form-group>
         </b-row>
-      </b-row>
+      </b-col>
     </b-row>
   </b-container>
 </template>
