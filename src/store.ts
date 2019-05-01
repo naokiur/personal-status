@@ -54,10 +54,16 @@ export default new Vuex.Store({
     updateMessage(state, val) {
       state.message = val;
     },
+    status(state, val) {
+      state.status = val;
+    },
   },
   actions: {
     updateMessage(context) {
       context.commit('updateMessage', 'Updated Message');
+    },
+    updateStatus(context, val) {
+      context.commit('status', val);
     },
   },
 });
