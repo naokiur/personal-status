@@ -25,6 +25,7 @@ export default new Vuex.Store({
     //   4,
     //   5,
     // ],
+    categoryInfo: [],
     status: [
       {
         id: 'fielder',
@@ -54,10 +55,16 @@ export default new Vuex.Store({
     updateMessage(state, val) {
       state.message = val;
     },
+    categoryInfo(state, val) {
+      state.categoryInfo.push(val);
+    }
   },
   actions: {
     updateMessage(context) {
       context.commit('updateMessage', 'Updated Message');
+    },
+    updateCategoryInfo({ commit }, info) {
+      commit('categoryInfo', info.id + info.val);
     },
   },
 });
