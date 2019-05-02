@@ -55,27 +55,16 @@ export default new Vuex.Store({
     updateMessage(state, val) {
       state.message = val;
     },
-<<<<<<< HEAD
-    status(state, val) {
-      state.status = val;
-    },
-=======
     categoryInfo(state, val) {
       state.categoryInfo.push(val);
     }
->>>>>>> refs/remotes/origin/add-input-area
   },
   actions: {
     updateMessage(context) {
       context.commit('updateMessage', 'Updated Message');
     },
-<<<<<<< HEAD
-    updateStatus(context, val) {
-      context.commit('status', val);
-=======
     updateCategoryInfo({ commit }, info) {
       commit('categoryInfo', info.id + info.val);
->>>>>>> refs/remotes/origin/add-input-area
     },
   },
 });
