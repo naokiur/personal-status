@@ -32,8 +32,10 @@ export default {
   },
   watch: {
     smallCategoryInput(newInput, oldInput) {
-      this.smallCategoryList = newInput.split('\n').filter(v => v != '')
-      console.log(this.smallCategoryList.length)
+      const newCategoryInfo = newInput.split('\n').filter(v => v != '')
+      this.smallCategoryList = newCategoryInfo
+      this.$store.dispatch('updateCategoryInfo', {id: this.category.id, val: newCategoryInfo})
+      console.log(this.$store.state.categoryInfo)
     } 
   }
   // computed: {
