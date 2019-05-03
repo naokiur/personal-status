@@ -57,7 +57,7 @@ export default new Vuex.Store({
     },
     categoryInfo(state, val) {
       state.categoryInfo.push(val);
-    }
+    },
   },
   actions: {
     updateMessage(context) {

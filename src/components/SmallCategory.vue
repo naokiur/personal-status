@@ -15,8 +15,7 @@
 export default {
   data() {
     return {
-        smallCategoryInput: '',
-        smallCategoryList: []
+        smallCategoryInput: ''
       }
   },
   props: {
@@ -33,9 +32,18 @@ export default {
   watch: {
     smallCategoryInput(newInput, oldInput) {
       const newCategoryInfo = newInput.split('\n').filter(v => v != '')
-      this.smallCategoryList = newCategoryInfo
-      this.$store.dispatch('updateCategoryInfo', {id: this.category.id, val: newCategoryInfo})
-      console.log(this.$store.state.categoryInfo)
+      const contents = newCategoryInfo.map(v => {
+        const content = v.split('\t').filter(v => v != '')
+  
+        if (content.length === 2) {
+          return { 
+            id: content[0],
+            level: content[1]
+          }
+        }
+      }).filter(v => v != '')
+
+      this.$store.dispatch('updateCategoryInfo', {id: this.category.id, val: contents})
     } 
   }
   // computed: {
