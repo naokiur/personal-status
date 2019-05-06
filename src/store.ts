@@ -50,13 +50,29 @@ export default new Vuex.Store({
         ],
       },
     ],
+    categoryInfoStatus: {
+      fielder: {
+        name: '野手',
+        contents: [
+          {id: 'meet', level: 5},
+        ],
+      },
+      pitcher: {
+        name: '投手',
+        contents: [
+          {id: 'diffence', level: 2},
+        ],
+      },
+    },
   },
   mutations: {
     updateMessage(state, val) {
       state.message = val;
     },
     categoryInfo(state, val) {
-      state.categoryInfo.push(val);
+      // state.categoryInfo.filter(v => v.id === val.id);
+      // Vue.set(state.categoryInfo, 0, val)
+      state.categoryInfo.push(val)
     },
   },
   actions: {
@@ -64,7 +80,10 @@ export default new Vuex.Store({
       context.commit('updateMessage', 'Updated Message');
     },
     updateCategoryInfo({ commit }, info) {
-      commit('categoryInfo', info.id + info.val);
+      commit('categoryInfo', info);
+    },
+    deleteCategoryInfo({ commit }, info) {
+      commit('categoryInfo', info);
     },
   },
 });
