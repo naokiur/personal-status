@@ -43,19 +43,7 @@ export default {
         }
       }).filter(v => v != '')
       this.$store.dispatch('updateCategoryInfo', {id: this.category.id, name: this.category.name, contents: contents})
-      // this.$store.dispatch('updateCategoryInfo', this.category.name)
     } 
   }
-  // computed: {
-  //   smallCategoryInput: {
-  //     // get() {
-  //     //   return this.smallCategoryInput
-  //     // },
-  //     set(newInput) {
-  //       this.smallCategoryInput = newInput
-  //       this.smallCategoryList = newInput.split('\n').filter(v => v != '')
-  //     }
-  //   }
-  // }
 }
 </script>

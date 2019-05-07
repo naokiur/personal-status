@@ -27,33 +27,8 @@
             <SmallCategory :category="category"></SmallCategory>
           </b-form-group>
         </b-row>
-        <!-- <b-row v-for="category in generateSmallCategories" :key="category">
-          <b-form-group
-            :id="`group-${category}`"
-            :label="category.id"
-            :label-for="category.id"
-          >
-            <b-form-textarea
-              :id="category.id"
-              v-model="category.smallCategoryInput"
-              rows="3"
-              max-rows="3"
-              :placeholder="`input ${category.id}`"
-            >
-            </b-form-textarea>
-          </b-form-group>
-        </b-row> -->
       </b-col>
     </b-row>
-    <!-- <b-row v-for="category in categoryList" :key="category.id">
-      <b-col>
-        <b-row v-for="smallCategory in category.smallCategoryList" :key="smallCategory.id">
-          <b-form-group>
-            <p>{{ `${category.name} : ${smallCategory}`  }}</p>
-          </b-form-group>
-        </b-row>
-      </b-col>
-    </b-row> -->
   </b-container>
 </template>
 
