@@ -50,8 +50,6 @@ export default {
           return {
             id: `id-${index}`,
             name: v,
-            // smallCategoryInput: '',
-            // smallCategoryList: [1, 2, 3]
           }
       })
     }
@@ -59,43 +57,5 @@ export default {
   components: {
     SmallCategory
   }
-  // methods: {
-  // //   generateSmallCategory(id) {
-  // //     const smallInput = this.cateList.filter(v => v.id = id)[0].smallCategoryInput
-  // //     this.cateList.filter(v => v.id = id)[0].smallCateList = smallInput.split(`\n`).filter(v => v != '').map(v => {
-  // //       return {
-  // //         id: v,
-  // //         level: 0
-  // //       }
-  // //     })
-  // //   }
-  //   generateCategoryList() {
-  //     this.categoryList = this.categoryInput.split('\n')
-  //       // Ignore blank data.
-  //       .filter(v => v != '').map((v, index) => {
-  //         return {
-  //           id: `id-${index}`,
-  //           name: v,
-  //           smallCategoryInput: '',
-  //           smallCategoryList: []
-  //         }
-  //       })
-  //   },
-  //   generateSmallCategoryList(categoryId) {
-  //     const targetCategory = this.categoryList.filter(v => v.id == categoryId)[0]
-  //     targetCategory.smallCategoryList 
-  //       = targetCategory.smallCategoryInput
-  //         .split('\n')
-  //         .filter(v => v != '')
-  //         .map((v, index) => {
-  //           return {
-  //             id: `small-id-${index}`,
-  //             name: v,
-  //             level: 0,
-  //             category: categoryId
-  //           }
-  //         })
-  //   }
-  // }
 }
 </script>
