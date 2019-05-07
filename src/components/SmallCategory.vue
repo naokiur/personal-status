@@ -42,8 +42,8 @@ export default {
           }
         }
       }).filter(v => v != '')
-
-      this.$store.dispatch('updateCategoryInfo', {id: this.category.id, val: contents})
+      this.$store.dispatch('updateCategoryInfo', {id: this.category.id, name: this.category.name, contents: contents})
+      // this.$store.dispatch('updateCategoryInfo', this.category.name)
     } 
   }
   // computed: {

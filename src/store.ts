@@ -25,6 +25,7 @@ export default new Vuex.Store({
     //   4,
     //   5,
     // ],
+    // categoryInfo: [],
     categoryInfo: [],
     status: [
       {
@@ -72,7 +73,8 @@ export default new Vuex.Store({
     categoryInfo(state, val) {
       // state.categoryInfo.filter(v => v.id === val.id);
       // Vue.set(state.categoryInfo, 0, val)
-      state.categoryInfo.push(val)
+      state.categoryInfo.push(val);
+      // state.categoryInfo = val;
     },
   },
   actions: {
