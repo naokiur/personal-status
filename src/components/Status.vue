@@ -20,18 +20,7 @@
       },
   })
   export default class Status extends Vue {
-      public tabInfoList = ['aaa', 'bbb', 'ccc'];
-
-      public status = this.$store.state.status;
       public categoryInfo = this.$store.state.categoryInfo;
-
-      get storeMessage(): string {
-        return this.$store.state.message;
-      }
-
-      get storeStatus() {
-        return this.$store.state.status;
-      }
 
       public updateMessage() {
         this.$store.dispatch('updateMessage');
