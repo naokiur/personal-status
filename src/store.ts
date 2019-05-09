@@ -9,17 +9,11 @@ export default new Vuex.Store({
     categoryInfo: [],
   },
   mutations: {
-    updateMessage(state, val) {
-      state.message = val;
-    },
     categoryInfo(state, val) {
       state.categoryInfo.push(val);
     },
   },
   actions: {
-    updateMessage(context) {
-      context.commit('updateMessage', 'Updated Message');
-    },
     updateCategoryInfo({ commit }, info) {
       commit('categoryInfo', info);
     },
