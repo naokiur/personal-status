@@ -7,10 +7,14 @@ export default new Vuex.Store({
   state: {
     message: 'FamilyName FirstName',
     categoryInfo: [],
+    categoryList: []
   },
   mutations: {
     categoryInfo(state, val) {
       state.categoryInfo.push(val);
+    },
+    categoryList(state, val) {
+      state.categoryList.push(val);
     },
   },
   actions: {
@@ -19,6 +23,9 @@ export default new Vuex.Store({
     },
     deleteCategoryInfo({ commit }, info) {
       commit('categoryInfo', info);
+    },
+    updateCategoryList({ commit }, info) {
+      commit('categoryList', info);
     },
   },
 });

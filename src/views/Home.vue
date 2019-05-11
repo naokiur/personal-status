@@ -1,6 +1,7 @@
 <template>
   <div class="home">
-    <b-card no-body>
+    <Category />
+    <!-- <b-card no-body>
         <b-tabs card>
           <b-tab title="ステータス">
             <Info></Info>
@@ -9,7 +10,7 @@
             <StatusInput></StatusInput>
           </b-tab>
         </b-tabs>
-    </b-card>
+    </b-card> -->
   </div>
 </template>
 
@@ -24,11 +25,13 @@
   import { Component, Vue } from 'vue-property-decorator';
   import Info from '@/components/Info.vue';
   import StatusInput from '@/components/StatusInput.vue';
+  import Category from '@/models/category/components/Category.vue';
 
   @Component({
     components: {
       Info,
       StatusInput,
+      Category,
     },
   })
   export default class Home extends Vue {}
