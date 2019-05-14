@@ -5,7 +5,7 @@ const { reactiveProp } = mixins
 export default {
   extends: HorizontalBar,
   mixins: [reactiveProp],
-  props: ['labels', 'options'],
+  props: ['options'],
   mounted() {
     // Overwriting base render method with actual data.
     this.renderChart(this.chartData, this.options)

@@ -1,15 +1,7 @@
 <template>
   <div class="home">
     <Category />
-    <b-form-textarea
-      id="homeInput"
-      v-model="homeInput"
-      rows=6
-      max-rows="6"
-      placeholder="home input"
-    />
-    {{ splitHomeInput }}
-    <CategoryGraph :labels="this.splitHomeInput" :data="this.getData" :chart-data="this.getChartData" :options="this.getOptions" />
+    <CategoryGraph :chartData="this.getChartData" :options="this.getOptions" />
 
     <!-- <b-card no-body>
         <b-tabs card>
@@ -71,7 +63,7 @@
 
     private get getChartData(): any {
       return {
-        labels: this.splitHomeInput,
+        labels: this.$store.getters.getCategoryNames,
         datasets: [
           {
             label: 'ステータス',
@@ -80,18 +72,6 @@
           },
         ],
       };
-    }
-
-    private get splitHomeInput(): string[] {
-      return this.homeInput.split('\n');
-    }
-
-    private get getLabels(): string[] {
-      return this.$store.getters.getCategoryNames;
-    }
-
-    private get getData(): number[] {
-      return this.$store.getters.getCategoryLevels;
     }
   }
 </script>
