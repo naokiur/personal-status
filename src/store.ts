@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import Category from '@/models/category/Category';
 
 Vue.use(Vuex);
 
@@ -26,6 +27,14 @@ export default new Vuex.Store({
     },
     updateCategoryList({ commit }, info) {
       commit('categoryList', info);
+    },
+  },
+  getters: {
+    getCategoryNames(state) {
+      return state.categoryList.map((m: Category) => m.getName());
+    },
+    getCategoryLevels(state) {
+      return state.categoryList.map((m: Category) => m.getLevel());
     },
   },
 });

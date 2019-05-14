@@ -17,7 +17,9 @@
           </b-form-textarea>
         </b-form-group>
       </b-col>
-      <b-col>{{ categoryInput }}</b-col>
+      <b-col>
+        <pre>{{ categoryInput }}</pre>
+      </b-col>
     </b-row>
   </b-container>
 </template>
@@ -32,7 +34,7 @@
 
     @Watch('categoryInput')
     public updateCategory() {
-      const m = new model('1', this.categoryInput, 10);
+      const m = new model('1', this.categoryInput, 3);
       this.$store.dispatch('updateCategoryList', m);
     }
   }
