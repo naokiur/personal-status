@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import Category from '@/models/category/Category';
+import CategoryList from './models/category/CategoryList';
 
 Vue.use(Vuex);
 
@@ -14,8 +15,8 @@ export default new Vuex.Store({
     categoryInfo(state, val) {
       state.categoryInfo.push(val);
     },
-    categoryList(state, val) {
-      state.categoryList.push(val);
+    categoryList(state, val: CategoryList) {
+      state.categoryList = val.getValues();
     },
   },
   actions: {

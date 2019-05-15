@@ -17,16 +17,13 @@
           </b-form-textarea>
         </b-form-group>
       </b-col>
-      <b-col>
-        <pre>{{ categoryInput }}</pre>
-      </b-col>
     </b-row>
   </b-container>
 </template>
 
 <script lang="ts">
   import {Component, Watch, Vue} from 'vue-property-decorator';
-  import model from '@/models/category/Category.ts';
+  import model from '@/models/category/CategoryList.ts';
 
   @Component
   export default class Category extends Vue {
@@ -34,7 +31,7 @@
 
     @Watch('categoryInput')
     public updateCategory() {
-      const m = new model('1', this.categoryInput, 3);
+      const m = new model(this.categoryInput);
       this.$store.dispatch('updateCategoryList', m);
     }
   }
