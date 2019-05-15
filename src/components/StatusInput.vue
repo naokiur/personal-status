@@ -1,7 +1,8 @@
 <template>
   <b-container>
     <b-row>
-      <b-col>
+      <Category />
+      <!-- <b-col>
         <b-form-group
           id="group-categoryInput"
           label="区分"
@@ -27,35 +28,36 @@
             <SmallCategory :category="category"></SmallCategory>
           </b-form-group>
         </b-row>
-      </b-col>
+      </b-col> -->
     </b-row>
   </b-container>
 </template>
 
 <script>
-import SmallCategory from '@/components/SmallCategory.vue'
-
-export default {
-  data() {
-    return {
-      categoryInput: '',
-      smallCategoryList: []
+  // import SmallCategory from '@/components/SmallCategory.vue'
+  import Category from '@/models/category/components/Category.vue';
+  export default {
+    data() {
+      return {
+        categoryInput: '',
+        smallCategoryList: []
+      }
+    },
+    computed: {
+      categoryList() {
+        return this.categoryInput.split('\n')
+          // Ignore blank data.
+          .filter(v => v != '').map((v, index) => {
+            return {
+              id: `id-${index}`,
+              name: v,
+            }
+        })
+      }
+    },
+    components: {
+      // SmallCategory,
+      Category,
     }
-  },
-  computed: {
-    categoryList() {
-      return this.categoryInput.split('\n')
-        // Ignore blank data.
-        .filter(v => v != '').map((v, index) => {
-          return {
-            id: `id-${index}`,
-            name: v,
-          }
-      })
-    }
-  },
-  components: {
-    SmallCategory
   }
-}
 </script>
