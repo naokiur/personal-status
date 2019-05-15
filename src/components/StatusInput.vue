@@ -2,39 +2,11 @@
   <b-container>
     <b-row>
       <Category />
-      <!-- <b-col>
-        <b-form-group
-          id="group-categoryInput"
-          label="区分"
-          label-for="categoryInput"
-        >
-          <b-form-textarea
-            id="categoryInput"
-            v-model="categoryInput"
-            rows=6
-            max-rows="6"
-            placeholder="input category"
-          >
-          </b-form-textarea>
-        </b-form-group>
-      </b-col>
-      <b-col>
-        <b-row v-for="category in categoryList" :key="category.id">
-          <b-form-group
-            :id="`group-${category.id}`"
-            :label="category.name"
-            :label-for="category.id"
-          >
-            <SmallCategory :category="category"></SmallCategory>
-          </b-form-group>
-        </b-row>
-      </b-col> -->
     </b-row>
   </b-container>
 </template>
 
 <script>
-  // import SmallCategory from '@/components/SmallCategory.vue'
   import Category from '@/models/category/components/Category.vue';
   export default {
     data() {
@@ -56,7 +28,6 @@
       }
     },
     components: {
-      // SmallCategory,
       Category,
     }
   }

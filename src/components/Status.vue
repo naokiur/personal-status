@@ -1,12 +1,5 @@
 <template>
   <section>
-    <!-- <b-card no-body>
-      <b-tabs card>
-        <b-tab v-for="category in categoryInfo" :key="category.id" :title="category.name">
-          <Chart :label="category.contents.map(content => content.id)" :data="category.contents.map(content => content.level)"></Chart>
-        </b-tab>
-      </b-tabs>
-    </b-card> -->
     <CategoryGraph :chartData="this.getChartData" :options="this.getOptions" />
   </section>
 </template>

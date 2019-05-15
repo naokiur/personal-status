@@ -32,8 +32,5 @@
     },
   })
   export default class Home extends Vue {
-    // public labels = this.$store.getters.getCategoryNames;
-    // public data = this.$store.getters.getCategoryLevels;
-    private homeInput: string = '';
   }
 </script>

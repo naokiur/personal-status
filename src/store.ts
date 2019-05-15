@@ -8,24 +8,14 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     message: 'FamilyName FirstName',
-    categoryInfo: [],
-    categoryList: []
+    categoryList: [],
   },
   mutations: {
-    categoryInfo(state, val) {
-      state.categoryInfo.push(val);
-    },
     categoryList(state, val: CategoryList) {
       state.categoryList = val.getValues();
     },
   },
   actions: {
-    updateCategoryInfo({ commit }, info) {
-      commit('categoryInfo', info);
-    },
-    deleteCategoryInfo({ commit }, info) {
-      commit('categoryInfo', info);
-    },
     updateCategoryList({ commit }, info) {
       commit('categoryList', info);
     },
