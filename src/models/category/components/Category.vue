@@ -39,6 +39,7 @@
     @Watch('headCategoryInput')
     public updateHeadCategory() {
       this.headCategoryList = new modelHeadCategory(this.headCategoryInput);
+      // this.$store.dispatch('updateCategoryList', m);
     }
 
     @Watch('categoryInput')
