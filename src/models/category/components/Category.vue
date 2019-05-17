@@ -11,6 +11,12 @@
         />
       </b-col>
       <b-col>
+        <b-row>
+          aaaas
+          {{ this.headCategoryList }}
+        </b-row>
+      </b-col>
+      <b-col>
         <b-form-textarea
           id="categoryInput"
           v-model="categoryInput"
@@ -21,7 +27,6 @@
         </b-form-textarea>
       </b-col>
     </b-row>
-    {{ headCategoryList }}
   </b-container>
 </template>
 
@@ -29,6 +34,7 @@
   import {Component, Watch, Vue} from 'vue-property-decorator';
   import modelCategory from '@/models/category/CategoryList.ts';
   import modelHeadCategory from '@/models/headCategory/HeadCategoryList.ts';
+  import modelHead from '@/models/headCategory/HeadCategory';
 
   @Component
   export default class Category extends Vue {
@@ -36,10 +42,15 @@
     public headCategoryInput: string = '';
     public headCategoryList: modelHeadCategory;
 
+    // public getHeadCategoryList(): modelHead[] {
+    //   return this.$store.state.HeadCategoryList;
+    // }
+
     @Watch('headCategoryInput')
     public updateHeadCategory() {
-      this.headCategoryList = new modelHeadCategory(this.headCategoryInput);
-      // this.$store.dispatch('updateCategoryList', m);
+      const m = new modelHeadCategory(this.headCategoryInput);
+      this.$store.dispatch('updateHeadCategoryList', m);
+      this.headCategoryList = m;
     }
 
     @Watch('categoryInput')
