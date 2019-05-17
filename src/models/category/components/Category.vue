@@ -49,7 +49,6 @@
     @Watch('headCategoryInput')
     public updateHeadCategory() {
       const m = new modelHeadCategory(this.headCategoryInput);
-      this.$store.dispatch('updateHeadCategoryList', m);
       this.headCategoryList = m;
     }
 
