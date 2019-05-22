@@ -6,7 +6,8 @@
             <Info></Info>
           </b-tab>
           <b-tab title="入力">
-            <StatusInput></StatusInput>
+            <!-- <StatusInput></StatusInput> -->
+            <Category />
           </b-tab>
         </b-tabs>
     </b-card>
@@ -23,12 +24,14 @@
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
   import Info from '@/components/Info.vue';
-  import StatusInput from '@/components/StatusInput.vue';
+  // import StatusInput from '@/components/StatusInput.vue';
+  import Category from '@/models/category/components/Category.vue';
 
   @Component({
     components: {
       Info,
-      StatusInput,
+      // StatusInput,
+      Category,
     },
   })
   export default class Home extends Vue {

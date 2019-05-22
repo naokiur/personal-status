@@ -1,3 +1,4 @@
+<!--
 <template>
   <b-container>
     <b-row>
@@ -6,29 +7,17 @@
   </b-container>
 </template>
 
+<!-- <script lang="ts"> -->
 <script>
-  import Category from '@/models/category/components/Category.vue';
-  export default {
-    data() {
-      return {
-        categoryInput: '',
-        smallCategoryList: []
-      }
-    },
-    computed: {
-      categoryList() {
-        return this.categoryInput.split('\n')
-          // Ignore blank data.
-          .filter(v => v != '').map((v, index) => {
-            return {
-              id: `id-${index}`,
-              name: v,
-            }
-        })
-      }
-    },
-    components: {
-      Category,
-    }
-  }
+  // // import {Component, Vue} from 'vue-property-decorator';
+  // import Category from '@/models/category/components/Category.vue';
+
+  // // @Component
+  // // export default class StatusInput extends Vue {
+  // // }
+  // export default {
+  //   components: {
+  //     Category,
+  //   }
+  // }
 </script>

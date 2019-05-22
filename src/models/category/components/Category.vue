@@ -11,20 +11,9 @@
         />
       </b-col>
       <b-col>
-        <b-row>
-          aaaas
-          {{ this.headCategoryList }}
+        <b-row v-for="head in this.headCategoryList.getValues()" :key="head.id">
+          <CategoryInput :head="head.name" />
         </b-row>
-      </b-col>
-      <b-col>
-        <b-form-textarea
-          id="categoryInput"
-          v-model="categoryInput"
-          rows=6
-          max-rows="6"
-          placeholder="input category"
-        >
-        </b-form-textarea>
       </b-col>
     </b-row>
   </b-container>
@@ -32,30 +21,22 @@
 
 <script lang="ts">
   import {Component, Watch, Vue} from 'vue-property-decorator';
+  import CategoryInput from '@/models/category/components/CategoryInput.vue';
   import modelCategory from '@/models/category/CategoryList.ts';
   import modelHeadCategory from '@/models/headCategory/HeadCategoryList.ts';
   import modelHead from '@/models/headCategory/HeadCategory';
 
-  @Component
+  @Component({
+    components: {
+        CategoryInput,
+      },
+  })
+
   export default class Category extends Vue {
-    public categoryInput: string = '';
     public headCategoryInput: string = '';
-    public headCategoryList: modelHeadCategory;
 
-    // public getHeadCategoryList(): modelHead[] {
-    //   return this.$store.state.HeadCategoryList;
-    // }
-
-    @Watch('headCategoryInput')
-    public updateHeadCategory() {
-      const m = new modelHeadCategory(this.headCategoryInput);
-      this.headCategoryList = m;
-    }
-
-    @Watch('categoryInput')
-    public updateCategory() {
-      const m = new modelCategory(this.categoryInput);
-      this.$store.dispatch('updateCategoryList', m);
+    public get headCategoryList(): modelHeadCategory {
+      return new modelHeadCategory(this.headCategoryInput);
     }
   }
 </script>
